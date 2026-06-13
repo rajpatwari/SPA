@@ -1,0 +1,20 @@
+package org.spa.query;
+
+public class DispatchDSQuery
+{
+  public String select1 = " SELECT dispatch_id, bilty_no,d.created_on,truck_capacity, freight_per_ton,adv_freight,driver_name,dm.district_id,dm.district_marathi,d.taluka_id,tm.taluka_marathi,agent_name,bilty_date,draft_bilty_num,driver_license,vehicle_number,get_dispatch_total(d.dispatch_id) AS dispatch_loading  FROM dispatch d   INNER JOIN taluka_master tm ON tm.taluka_id = d.taluka_id  INNER JOIN district_master dm ON dm.district_id = tm.district_id_fk  WHERE STR_TO_DATE(bilty_date,'%d/%m/%Y') BETWEEN STR_TO_DATE(?,'%d/%m/%Y') AND STR_TO_DATE(?,'%d/%m/%Y')  GROUP BY dispatch_id DESC  LIMIT ?,?  ";
+  
+  public String select2 = " SELECT dispatch_id, bilty_no,d.created_on,truck_capacity, freight_per_ton,adv_freight,driver_name,dm.district_id,dm.district_marathi,d.taluka_id,tm.taluka_marathi,agent_name,bilty_date,draft_bilty_num,driver_license,vehicle_number,get_dispatch_total(d.dispatch_id) AS dispatch_loading  FROM dispatch d   INNER JOIN taluka_master tm ON tm.taluka_id = d.taluka_id  INNER JOIN district_master dm ON dm.district_id = tm.district_id_fk  WHERE dispatch_id = ?";
+  
+  public String select3 = " SELECT d.dispatch_id,d.bilty_no,d.bilty_date,d.agent_name,d.vehicle_number,tod.order_type,IFNULL(dtod.mungdaal,0),IFNULL(dtod.matki,0),IFNULL(dtod.mung,0),IFNULL(dtod.masuldaal,0),IFNULL(dtod.chvli,0),IFNULL(dtod.tel,0),IFNULL(dtod.mith,0),IFNULL(dtod.mirchi,0),IFNULL(dtod.halad,0),IFNULL(dtod.jire,0),IFNULL(dtod.mohari,0),IFNULL(dtod.tandul,0),IFNULL(dtod.harbara,0),IFNULL(dtod.vatana,0),IFNULL(dtod.extra1,0),IFNULL(dtod.extra2,0),IFNULL(dtod.extra3,0),IFNULL(dtod.extra4,0),IFNULL(dtod.extra5,0),IFNULL(dtod.extra6,0)  FROM district_order dod  INNER JOIN taluka_order tod ON tod.district_order_id = dod.district_order_id  INNER JOIN dispatch_taluka_order_details dtod ON dtod.taluka_order_id = tod.taluka_order_id AND dtod.bilty_flag <> 0  INNER JOIN dispatch d ON d.dispatch_id = dtod.dispatch_id_fk  WHERE dod.district_order_id = ? ";
+
+  public String select4 = " SELECT tm.taluka_id, tm.taluka_marathi,t.taluka_order_id, SUM(IFNULL(tod.mungdaal,0)),SUM(IFNULL(tod.matki,0)),SUM(IFNULL(tod.mung,0)),SUM(IFNULL(tod.masuldaal,0)), SUM(IFNULL(tod.chvli,0)),SUM(IFNULL(tod.tel,0)),SUM(IFNULL(tod.mith,0)),SUM(IFNULL(tod.mirchi,0)), SUM(IFNULL(tod.halad,0)),SUM(IFNULL(tod.jire,0)),SUM(IFNULL(tod.mohari,0)),SUM(IFNULL(tod.tandul,0)),SUM(IFNULL(tod.harbara,0)),SUM(IFNULL(tod.vatana,0)),SUM(IFNULL(tod.extra1,0)),SUM(IFNULL(tod.extra2,0)),SUM(IFNULL(tod.extra3,0)),SUM(IFNULL(tod.extra4,0)),SUM(IFNULL(tod.extra5,0)),SUM(IFNULL(tod.extra6,0))  FROM dispatch_taluka_order_details tod  INNER JOIN taluka_order t ON t.taluka_order_id = tod.taluka_order_id  INNER JOIN taluka_master tm ON tm.taluka_id = t.taluka_id  WHERE t.district_order_id = ? AND tod.bilty_flag <> 1  GROUP BY tod.taluka_order_id ";
+
+  public String select5 = " SELECT dispatch_id, bilty_no,d.created_on,truck_capacity, freight_per_ton,adv_freight,driver_name,dm.district_id,dm.district_marathi,d.taluka_id,tm.taluka_marathi,agent_name,bilty_date,draft_bilty_num,driver_license,vehicle_number,get_dispatch_total(d.dispatch_id) AS dispatch_loading  FROM dispatch d   INNER JOIN taluka_master tm ON tm.taluka_id = d.taluka_id  INNER JOIN district_master dm ON dm.district_id = tm.district_id_fk  WHERE STR_TO_DATE(bilty_date,'%d/%m/%Y') BETWEEN STR_TO_DATE(?,'%d/%m/%Y') AND STR_TO_DATE(?,'%d/%m/%Y')  GROUP BY dispatch_id ";
+  
+  public String insert1 = " INSERT INTO dispatch(dispatch_id, bilty_no, created_on, truck_capacity, freight_per_ton, adv_freight, driver_name, driver_license, vehicle_number, agent_name, bilty_date, draft_bilty_num,taluka_id)   \t\t\t VALUES(    null,       0,     curdate(),        ?,              ?,              ?,           ?,  \t        ?,               ?,           ?,          ?,             ?,           ?    ) ";
+  
+  public String update1 = " UPDATE dispatch SET truck_capacity=?,freight_per_ton=?,adv_freight=?,driver_name=?,driver_license=?,vehicle_number=?,agent_name=?,bilty_date=?,draft_bilty_num=?  WHERE dispatch_id = ? ";
+  
+  public DispatchDSQuery() {}
+}

@@ -1,0 +1,4 @@
+2024-07-28 10:56:41,394 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-07-28 10:59:28,776 [Worker-33: https://download.eclipse.org/jetty/updates/jetty-wtp/1.0.0.201012221052/content.jar] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://archive.eclipse.org:443
+2024-07-28 10:59:28,775 [Worker-28: https://download.oracle.com/otn_software/oepe/library/oracle-adf-12.1.2-doc/content.jar] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://download.oracle.com:443
+2026-06-10 10:50:35,249 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

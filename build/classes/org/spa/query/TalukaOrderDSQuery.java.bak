@@ -1,0 +1,72 @@
+package org.spa.query;
+
+public class TalukaOrderDSQuery
+{
+  public String s1 = " SELECT *,(SELECT tod1.taluka_order_details_id FROM taluka_order_details tod1 WHERE tod1.taluka_order_id = taluka_order GROUP BY taluka_order_id) AS order_detail_id FROM (SELECT tao.taluka_order_id AS taluka_order,  tao.taluka_gov_order_num, tm.taluka_id, tm.taluka_marathi, tao.from_month, tao.from_year, tao.to_month, tao.to_year, tao.taluka_order_date, tao.order_type FROM taluka_master tm LEFT JOIN  taluka_order tao  ON  tao.taluka_id = tm.taluka_id AND tao.district_order_id = ? AND deleted = 0 AND STR_TO_DATE(tao.taluka_order_date,'%d/%m/%Y') BETWEEN STR_TO_DATE(?,'%d/%m/%Y') AND STR_TO_DATE(?,'%d/%m/%Y') WHERE tm.district_id_fk = ? LIMIT ?,? ) AS a";
+  
+  public String s2 = " SELECT s1.section_id,section_marathi, ROUND(IFNULL(a1,0),4), ROUND(IFNULL(a2,0),4), ROUND(IFNULL(a3,0),4), ROUND(IFNULL(a4,0),4), ROUND(IFNULL(a5,0),4), ROUND(IFNULL(a6,0),4), ROUND(IFNULL(a7,0),4), ROUND(IFNULL(a8,0),4), ROUND(IFNULL(a9,0),4), ROUND(IFNULL(a10,0),4), ROUND(IFNULL(a11,0),4), ROUND(IFNULL(a12,0),4), ROUND(IFNULL(a13,0),4), ROUND(IFNULL(a14,0),4), ROUND(IFNULL(a15,0),4), ROUND(IFNULL(a16,0),4), ROUND(IFNULL(a17,0),4), ROUND(IFNULL(a18,0),4), ROUND(IFNULL(a19,0),4), ROUND(IFNULL(a20,0),4)  FROM section_master AS s1  LEFT OUTER JOIN  (  SELECT t.taluka_order_id,section_id,  SUM(tod.mungdaal) AS a1, SUM(tod.matki) AS a2,  SUM(tod.mung) AS a3, SUM(tod.masuldaal) AS a4,  SUM(tod.chvli) AS a5, SUM(tod.tel) AS a6,  SUM(tod.mith) AS a7, SUM(tod.mirchi) AS a8,  SUM(tod.halad) AS a9,SUM(tod.jire) AS a10,  SUM(tod.mohari) AS a11, SUM(tod.tandul) AS a12, SUM(tod.harbara) AS a13, SUM(tod.vatana) AS a14, SUM(tod.extra1) AS a15, SUM(tod.extra2) AS a16, SUM(tod.extra3) AS a17, SUM(tod.extra4) AS a18, SUM(tod.extra5) AS a19, SUM(tod.extra6) AS a20  FROM taluka_order_details tod, taluka_order t  WHERE t.taluka_order_id = tod.taluka_order_id  AND t.taluka_order_id= ?  GROUP BY section_id   ) AS s2   ON s1.section_id = s2.section_id   WHERE s1.taluka_id_fk = ? ";
+
+  public String s3 = " SELECT s1.beat_id,s1.beat_marathi, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20  FROM beat_master AS s1  LEFT OUTER JOIN  (  SELECT t.taluka_order_id,beat_id,   SUM(tod.mungdaal) AS a1, SUM(tod.matki) AS a2,  SUM(tod.mung) AS a3, SUM(tod.masuldaal) AS a4,  SUM(tod.chvli) AS a5, SUM(tod.tel) AS a6,  SUM(tod.mith) AS a7, SUM(tod.mirchi) AS a8,  SUM(tod.halad) AS a9,SUM(tod.jire) AS a10,  SUM(tod.mohari) AS a11, SUM(tod.tandul) AS a12, SUM(tod.harbara) AS a13, SUM(tod.vatana) AS a14, SUM(tod.extra1) AS a15, SUM(tod.extra2) AS a16, SUM(tod.extra3) AS a17, SUM(tod.extra4) AS a18, SUM(tod.extra5) AS a19, SUM(tod.extra6) AS a20  FROM taluka_order_details tod, taluka_order t  WHERE t.taluka_order_id = tod.taluka_order_id  AND t.taluka_order_id= ?  GROUP BY beat_id    ) AS s2   ON s1.beat_id = s2.beat_id  WHERE s1.section_id =  ? ";
+
+   public String s4 = " SELECT tod.taluka_order_details_id, tod.taluka_order_id, sm.beat_id_fk, sm.school_id, sm.school_marathi,cm.challan_number,"
+   		+ "cm.challan_date, tod.mungdaal, tod.matki, tod.mung, tod.masuldaal, tod.chvli, tod.tel, tod.mith, tod.mirchi, tod.halad, "
+   		+ "tod.jire, tod.mohari, tod.tandul, tod.challan_master_id, d.vehicle_number, cm.bill_number, t_order.order_type, tod.harbara, tod.vatana, tod.extra1, tod.extra2, tod.extra3, tod.extra4, tod.extra5, tod.extra6 "
+   		+ "FROM school_master sm "
+   		+ "LEFT JOIN taluka_order_details tod ON tod.school_id = sm.school_id AND tod.taluka_order_id = ? "
+   		+ "LEFT JOIN taluka_order t_order ON tod.school_id = sm.school_id AND t_order.taluka_order_id = ? "
+   		+ "LEFT JOIN challan_master cm ON tod.challan_master_id = cm.challan_master_id "
+   		+ "LEFT JOIN dispatch_taluka_order_details dtod ON dtod.taluka_order_id = tod.taluka_order_id "
+   		+ "LEFT JOIN dispatch d ON d.dispatch_id = dtod.dispatch_id_fk  WHERE sm.beat_id_fk = ?";
+
+  public String s5 = "SELECT max(challan_number) FROM challan_master";
+  
+  public String s6 = " SELECT tor.taluka_order_id AS taluka_order_id,order_number,from_month,from_year,to_month,to_year,tor.taluka_order_date FROM taluka_order tor, district_order dor WHERE tor.district_order_id = dor.district_order_id AND taluka_id = ? AND dor.deleted <> 1 AND tor.taluka_order_id <> ? AND tor.order_type = ?  AND (SELECT COUNT(*) FROM taluka_order_details WHERE taluka_order_id = ? ) <> 0 ";
+  
+  public String s7 = " SELECT tor.taluka_order_id AS taluka_order_id,order_number,from_month,from_year,to_month,to_year,tor.taluka_order_date, tor.order_type  FROM taluka_order tor, district_order dor  WHERE tor.district_order_id = dor.district_order_id AND taluka_id = ?  AND dor.deleted <> 1  AND tor.order_type = ? ";
+  
+  public String s9 = " SELECT tor.taluka_order_id AS taluka_order_id,order_number,from_month,from_year,to_month,to_year,tor.taluka_order_date, tor.order_type  FROM taluka_order tor, district_order dor  WHERE tor.district_order_id = dor.district_order_id AND taluka_id = ?  AND dor.deleted <> 1 AND tor.deleted<> 1 ";
+  
+   public String s8 = " SELECT section_id, beat_id, school_id, mungdaal, matki, mung, masuldaal, chvli, tel, mith, mirchi, halad, jire, mohari, tandul, harbara, vatana, extra1, extra2, extra3, extra4, extra5, extra6 FROM taluka_order_details  WHERE taluka_order_id = ? ";
+
+   public String s10 = " SELECT tod.taluka_return_details_id, tod.taluka_order_id, sm.beat_id_fk, sm.school_id, sm.school_marathi, tod.mungdaal, tod.matki, tod.mung, tod.masuldaal, tod.chvli, tod.tel, tod.mith, tod.mirchi, tod.halad, tod.jire, tod.mohari, tod.tandul, tod.harbara, tod.vatana, tod.extra1, tod.extra2, tod.extra3, tod.extra4, tod.extra5, tod.extra6  FROM school_master sm  LEFT JOIN taluka_return_details tod ON tod.school_id = sm.school_id AND tod.taluka_order_id = ?  WHERE sm.beat_id_fk = ? ";
+
+   public String s11 = " SELECT IFNULL(SUM(tod.mungdaal),0), IFNULL(SUM(tod.matki),0), IFNULL(SUM(tod.mung),0), IFNULL(SUM(tod.masuldaal),0), IFNULL(SUM(tod.chvli),0), IFNULL(SUM(tod.tel),0), IFNULL(SUM(tod.mith),0), IFNULL(SUM(tod.mirchi),0), IFNULL(SUM(tod.halad),0), IFNULL(SUM(tod.jire),0), IFNULL(SUM(tod.mohari),0), IFNULL(SUM(tod.tandul),0), IFNULL(SUM(tod.harbara),0), IFNULL(SUM(tod.vatana),0), IFNULL(SUM(tod.extra1),0), IFNULL(SUM(tod.extra2),0), IFNULL(SUM(tod.extra3),0), IFNULL(SUM(tod.extra4),0), IFNULL(SUM(tod.extra5),0), IFNULL(SUM(tod.extra6),0) FROM taluka_return_details tod WHERE tod.taluka_order_id = ? ";
+
+   public String s12 = " SELECT tod.taluka_order_details_id, tod.taluka_order_id, sm.beat_id_fk, sm.school_id, sm.school_marathi,cm.challan_number,"
+   		+ "cm.challan_date, tod.mungdaal, tod.matki, tod.mung, tod.masuldaal, tod.chvli, tod.tel, tod.mith, tod.mirchi, tod.halad, tod.jire, "
+   		+ "tod.mohari, tod.tandul, tod.challan_master_id, d.vehicle_number,cm.bill_number, t_order.order_type, tod.harbara, tod.vatana, tod.extra1, tod.extra2, tod.extra3, tod.extra4, tod.extra5, tod.extra6 "
+   		+ "FROM school_master sm "
+   		+ "LEFT JOIN taluka_order_details tod ON tod.school_id = sm.school_id AND tod.taluka_order_id = ? "
+   		+ "LEFT JOIN taluka_order t_order ON tod.school_id = sm.school_id AND t_order.taluka_order_id = ? "
+   		+ "LEFT JOIN challan_master cm ON tod.challan_master_id = cm.challan_master_id "
+   		+ "LEFT JOIN dispatch_taluka_order_details dtod ON dtod.taluka_order_id = tod.taluka_order_id "
+   		+ "LEFT JOIN dispatch d ON d.dispatch_id = dtod.dispatch_id_fk  WHERE sm.beat_id_fk = ? AND IFNULL(tod.challan_master_id,0) != 0 ";
+
+   public String s13 = " SELECT tod.taluka_order_details_id, tod.school_id, sm.school_marathi ,IFNULL(tod.mungdaal, 0), IFNULL(tod.matki, 0), IFNULL(tod.mung, 0), IFNULL(tod.masuldaal, 0), IFNULL(tod.chvli, 0), IFNULL(tod.tel, 0),IFNULL(tod.mith, 0), IFNULL(tod.mirchi, 0), IFNULL(tod.halad, 0),IFNULL(tod.jire, 0), IFNULL(tod.mohari, 0), IFNULL(tod.tandul, 0), IFNULL(tod.harbara, 0), IFNULL(tod.vatana, 0), IFNULL(tod.extra1, 0), IFNULL(tod.extra2, 0), IFNULL(tod.extra3, 0), IFNULL(tod.extra4, 0), IFNULL(tod.extra5, 0), IFNULL(tod.extra6, 0)  FROM taluka_order_details tod  INNER JOIN root_details rd ON rd.FK_SCHOOL_ID = tod.school_id AND rd.FK_ROOT_MASTER_ID = ?  INNER JOIN school_master sm ON sm.school_id = tod.school_id  WHERE tod.taluka_order_id  = ? AND tod.challan_master_id <> 0 ";
+
+  public String s14 = "SELECT max(bill_number) FROM challan_master";
+  
+  public String i1 = "INSERT INTO taluka_order VALUES (null,?,?,?,?,?,?,?,?,curdate(),?,0)";
+  
+   public String i2 = "INSERT INTO taluka_order_details VALUES (null,?,null,null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+
+   public String i3 = " UPDATE taluka_order_details SET mungdaal= ?,matki= ?,mung= ?,masuldaal= ?,chvli= ?,tel= ?,mith= ?,mirchi= ?,halad= ?,jire= ?,mohari= ?,tandul= ?,harbara= ?,vatana= ?,extra1= ?,extra2= ?,extra3= ?,extra4= ?,extra5= ?,extra6= ?  WHERE taluka_order_id = ? AND section_id = ? AND beat_id = ? AND school_id = ? ";
+
+  public String i4 = " INSERT INTO challan_master VALUES(NULL,?,?,?) ";
+  
+   public String i5 = "INSERT INTO taluka_return_details VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,curdate(),?,?,?,?,?,?,?,?,?,?);";
+
+   public String i6 = " UPDATE taluka_return_details SET mungdaal= ?,matki= ?,mung= ?,masuldaal= ?,chvli= ?,tel= ?,mith= ?,mirchi= ?,halad= ?,jire= ?,mohari= ?,tandul= ?,harbara= ?,vatana= ?,extra1= ?,extra2= ?,extra3= ?,extra4= ?,extra5= ?,extra6= ?  WHERE taluka_order_id = ? AND section_id = ? AND beat_id = ? AND school_id = ? ";
+
+  public String u1 = " UPDATE taluka_order SET taluka_gov_order_num = ?, taluka_order_date= ?, from_month = ?, from_year = ?, to_month = ?, to_year = ?  WHERE taluka_order_id = ? ";
+  
+  public String u2 = " UPDATE taluka_order SET deleted = 1 where taluka_order_id = ? ";
+  
+  public String u3 = " UPDATE challan_master SET challan_date= ? WHERE challan_master_id = ? ";
+  
+  public String u4 = " UPDATE taluka_order_details SET challan_master_id=?, challan_date= ? WHERE taluka_order_details_id=? ";
+  
+  public String d1 = " delete from taluka_order_details where taluka_order_id = ? ";
+  
+  public TalukaOrderDSQuery() {}
+}

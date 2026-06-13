@@ -1,0 +1,357 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
+<%@page import="org.spa.helper.TalukaOrderDetailDSHelper"%>
+<%@page import="org.spa.entity.*"%>
+<%@page import="org.spa.ds.*"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.util.StringTokenizer"%>
+<%@page import="org.spa.helper.NumberToMarathiWord"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.NumberFormat"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Invoice Preview</title>
+        <link rel="stylesheet" type="text/css"
+              href="./../resources/css/ext-all.css" />
+
+        <style type="text/css">
+            <!--
+            body {
+                font-family:Tahoma;
+            }
+            img {
+                border:0;
+            }
+            #page {
+                width:590px;
+                margin:0 auto;
+                padding:0px;
+            }
+            #address {
+                height:181px;
+                margin-left:15px;
+            }
+            table {
+                width:100%;
+            }
+            td {
+                padding:0px;
+            }
+            tr.odd {
+                background:#e1ffe1;
+            }
+            tr.center {
+                text-align: center;
+            }
+            p.center {
+                text-align: center;
+            }
+            tr.left {
+                text-align: left;
+            }
+            table.center {
+                text-align: center;
+            }
+            td.right {
+                text-align: right;
+            }
+            tr.right {
+                text-align: right;
+            }
+            th {
+                font:normal bold 12px Tahoma;
+                text-decoration:none;
+            }
+            right {
+                text-align: right;
+            }
+            center {
+                text-align: center;
+            }
+            .fontMarathiNumber {
+                font:normal normal 20px Kiran,Tahoma;
+                text-decoration:none;
+            }
+            .fontsize10 {
+                font:normal normal 10px Tahoma;
+                text-decoration:none;
+            }
+            .fontsize12 {
+                font:normal normal 12px Tahoma;
+                text-decoration:none;
+            }
+            .fontsize14 {
+                font:normal normal 14px Tahoma;
+                text-decoration:none;
+            }
+            .fontsize16Bold {
+                font:normal normal 16px Tahoma bold;
+                text-decoration:none;
+            }
+            .fontsize18 {
+                font:normal normal 18px Tahoma;
+                text-decoration:none;
+            }
+            table.printstyle {
+                border-width: 2px;
+                border-spacing: 0px ;
+                border-style: inset;
+                border-color: gray;
+                border-collapse: collapse;
+                background-color: white;
+            }
+            table.printstyle th {
+                border-width: 2px;
+                padding: 1px;
+                border-style: inset;
+                border-color: gray;
+                background-color: white;
+            }
+            table.printstyle td {
+                border-width: 1px;
+                padding: 1px;
+                border-style: inset;
+                border-color: gray;
+                background-color: white;
+            }
+
+            P.breakhere {page-break-before: always;}
+            -->
+        </style>
+        <script type="text/javascript" src="./../resources/adapter/ext/ext-base.js"></script>
+        <!-- ENDLIBS -->
+
+        <script type="text/javascript" src="./../resources/js/ext-all.js"></script>
+
+        <script>
+            var date, invoiceNumber1, invoiceNumber2 ;
+            Ext.onReady(function() 
+           	{
+            	invoiceNumber1 = new Ext.form.NumberField(
+            	{
+                    name: 'brokenDateField',
+                    id: 'invoice1',
+                    allowBlank: false,
+                    applyTo : 'invoiceNumber1',
+                    emptyText :'बिल नं.'
+                });
+            	invoiceNumber2 = new Ext.form.NumberField(
+            	{
+                    name: 'brokenDateField',
+                    id: 'invoice2',
+                    allowBlank: false,
+                    applyTo : 'invoiceNumber2',
+                    emptyText :'बिल नं.'
+                });
+            });
+            validate = function()
+            {
+            	if(invoiceNumber1.getValue().length == 0)
+                {
+                    return false;
+                }
+            	if(invoiceNumber2.getValue().length == 0)
+                {
+                    return false;
+                }
+                return true;
+            };
+        </script>
+    </head>
+	<body>
+<%
+	double kweightTotal = 0.0, rweightTotal = 0.0, kamountTotal = 0.0,ramountTotal = 0.0,tamountTotal = 0.0;
+	NumberFormat twoDecimalFormatter = new DecimalFormat("#0.00");
+	NumberFormat threeDecimalFormatter = new DecimalFormat("#0.000");
+	NumberFormat zeroDecimalFormatter = new DecimalFormat("#");
+	String orderID = request.getParameter("orderID");
+	String districtID = request.getParameter("districtID");
+	String previewDate = request.getParameter("previewDate");
+	TalukaOrderDetailDSHelper dSHelper = new TalukaOrderDetailDSHelper();
+	List<TalukaOrder> t = dSHelper.districtOrderDetails(Integer.parseInt(orderID));
+	int flag = 0, counter = 0 ;
+	//System.out.println("Hello "+ t.size() + "\t" + t.isEmpty());
+	if(t.isEmpty())
+	{
+		out.println("<h1>Taluka Order is Not Created for This District order</h1>");	
+	}
+	else
+	{
+		for(TalukaOrder to : t)
+		{
+			counter++;
+			if(to.getInvoiceID() == 0)
+			{
+				flag++;
+			}
+		}
+		if(flag == counter)
+		{
+			out.println("<h1>Taluka Bill is not Created for This District order</h1>");
+		}
+		else
+		{
+			if(t.get(0).getOrderType() == 2)
+			{
+				out.println("<h1>District Bill Not Created for Ration Order Only for Rice Order</h1>");
+			}
+			else
+			{
+				ArrayList<Item> itemList = new InvoiceDS().getAllItemByVersion(previewDate);
+				int version = itemList.get(0).getVersion();
+				DispatchTalukaOrder rate = new DispatchTalukaOrder();
+				DispatchTalukaOrder vat = new DispatchTalukaOrder();
+				double kRate = 0.0,rRate = 0.0,tRate = 0.0,tweight= 0.0;
+				for(Item i : itemList)
+				{
+			        if(i.getItemId() == 12)
+			        {
+			        	kRate = i.getkRate();
+			        	rRate = i.getrRate();
+			        }
+				}	
+				NumberToMarathiWord nm = new NumberToMarathiWord();
+				String msg = request.getParameter("msg");
+				if (msg != null) 
+			    {
+%>
+  			    <p class="center" style="text-decoration: blink;color: red"><%=msg%></p>
+<%
+				}
+				
+%>			            
+		    <form  action="../create/create-district-invoice.jsp" accept-charset="ISO-8859-1" method="POST" onsubmit="return validate(this)">
+			    <input type="hidden" name="orderID" value="<%=orderID%>" >
+			    <input type="hidden" name="districtID" value="<%=districtID%>" >
+			    <input type="hidden" name="version" value="<%=version%>" >
+			    <input type="hidden" name="invoiceDate" id="invoiceDate" value="<%=previewDate%>" >
+		    	<p class="center">Bill Preview (Not for print)</p>
+				<table border="0" width="100%">
+		             <tbody class="fontsize14">   
+		             	<tr>
+		                     <td class="right" width="75%"><b>केंद्र हिस्सा</b> <input type="text"  id="invoiceNumber1"  name="invoiceNumber1" > <b> राज्य हिस्सा </b> </td>
+		                     <td class="left" width="25%"> <input type="text"  id="invoiceNumber2"  name="invoiceNumber2" ><span id="msg"> </span><input type="submit" name="create bill" value="बिल बनवा"></td>
+		                 </tr>                 
+		                 <tr>
+		                     <td class="left" width="75%">शिक्षणाधिकारी अधिखक (प्राथमिक)</td>
+		                     <td class="left" width="25%">तारीख : <%=previewDate %></td>
+		             </tr>
+		             <tr>
+		                 <td class="left" width="75%">जिल्हा परिषद , <b><%=t.get(0).getDistrictName()%></b></td>
+		                 <td class="left" width="25%">माहे <b><%=t.get(0).getFromMonth()%> - <%=t.get(0).getFromYear()%>  ते  <%=t.get(0).getToMonth()%> - <%=t.get(0).getToYear() %></b></td>
+		             </tr>
+		             <tr>
+		                 <td class="left" width="75%">जिल्हा - <b><%=t.get(0).getDistrictName()%></b></td>
+		                 <td class="left" width="25%">इयत्ता - <b><%=t.get(0).getOrderTypeDetails()%></b></td>
+		             </tr>
+		             <tr>
+		                 <td class="left" colspan="2">&nbsp;</td>
+		             </tr>
+		             <tr>
+		                 <td class="left" colspan="2">मा शिक्षणाधिकारी प्राथमिक जि प <b><%=t.get(0).getDistrictName()%></b> य़ांचे दि. १०/१०/२०१३ चे पुरवठा आदेशानुसार</td>
+		             </tr>
+		         </tbody>
+		     </table>
+		     <br/>
+<%
+				for(int i =1; i<=2; i++)
+				{
+%>	
+            <table border="0" width="100%">
+                <tbody class="fontsize16">
+                	<tr>
+                        <td class="right" colspan="2"><%if(i==1){out.print("<b>(केंद्र हिस्सा)</b>");}else{out.print("<b>(राज्य हिस्सा)</b>");}%></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+			<table  class="printstyle fontsize15"  width="800">
+            	<thead class="fontsize16Bold">
+            		<tr class="center">
+	                    <td><b>अ. क्र.</b></td>
+	                    <td><b>तालुक्याचे ना</b>व</td>
+	                    <td><b>तादुळ वाटप कालावधी</b></td>
+	                    <td><b>केलेला तादुळ(कि.ग्रा.)</b></td>
+	                    <td><b>वाहतूक दर प्र-कि-ग्रॅम</b></td>
+	                    <td><b>एकुण रक्कम रु</b></td>
+	                </tr>
+            	</thead>
+            	<tbody class="fontsize15" class="center">
+<%			
+					if(i==1)
+					{
+						tRate = kRate;
+					}
+					else
+					{
+						tRate = rRate;
+					}
+					int k = 0;
+					tamountTotal = 0.0;
+					tweight = 0.0;
+					for(TalukaOrder tOrder : t)
+					{
+%>
+            		<tr class="fontMarathiNumber right">
+            			<td> <center><%=++k %></center> </td>
+            			<td> <center><%=tOrder.getTalukaName() %></center> </td>
+            			<td> <center><%=tOrder.getFromMonth()%> - <%=tOrder.getFromYear()%>  ते  <%=tOrder.getToMonth()%> - <%=tOrder.getToYear() %></center></td>
+            			<td><%=threeDecimalFormatter.format(tOrder.getWeight())%></td>
+            			<td><%=twoDecimalFormatter.format(tRate)%></td>
+            			<td><%=twoDecimalFormatter.format(tOrder.getWeight()*tRate)%></td>
+            		</tr>
+<%
+						tamountTotal = tamountTotal + (tOrder.getWeight()*tRate);
+						tweight = tweight + tOrder.getWeight();
+					}
+					if(i==1)
+					{
+						kamountTotal = tamountTotal;
+					}
+					else
+					{
+						ramountTotal = tamountTotal;
+					}
+%>
+					<tr class="fontMarathiNumber right">
+	                	<td colspan="3" class="left"><b> Total </b></td>
+	                	<td><b><%=threeDecimalFormatter.format(tweight)%></b></td>
+	                    <td ></td>
+            			<td class="right"><b><%=twoDecimalFormatter.format(tamountTotal)%></b></td>
+	                </tr>
+	                <tr class="fontMarathiNumber">
+	                	<td colspan="6" class="left"><b> अक्षरी रुपये -  <%=nm.convertToWord(tamountTotal) %></b></td>
+	                </tr>
+	            </tbody>
+    	    </table>       	    
+	       	<br><br>
+    	    <hr class="noprint" style="color: red">
+<%
+					if(i==1)
+					{
+%>
+	       	<p class="breakhere"></p>
+<%
+					}
+				}
+%> 	    			
+		     <input type="hidden" name="weightTotal" value="<%=tweight%>" >
+		     <input type="hidden" name="total" id="total1" value="<%=kamountTotal%>" >	
+		     <input type="hidden" name="total1" id="total2" value="<%=ramountTotal%>" >	
+        </form>
+   	    	       
+<%			
+			}
+		}
+	}
+%>
+		
+	</body>
+</html>

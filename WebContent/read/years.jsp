@@ -1,0 +1,5 @@
+﻿<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+	String s = "{root :[{'year':'2009',yearMarathi:'२००९'},{'year':'2010',yearMarathi:'२०१०'},{'year':'2011',yearMarathi:'२०११'},"
+             + "{'year':'2012',yearMarathi:'२०१२'},{'year':'2013',yearMarathi:'२०१३'},{'year':'2014',yearMarathi:'२०१४'},{'year':'2015',yearMarathi:'२०१५'},{'year':'2016',yearMarathi:'२०१६'},{'year':'2017',yearMarathi:'२०१७'},{'year':'2018',yearMarathi:'२०१८'},{'year':'2019',yearMarathi:'२०१९'},{'year':'2020',yearMarathi:'२०२०'},{'year':'2021',yearMarathi:'२०२१'},{'year':'2022',yearMarathi:'२०२२'},{'year':'2023',yearMarathi:'२०२३'},{'year':'2024',yearMarathi:'२०२४'},{'year':'2025',yearMarathi:'२०२५'} ,{'year':'2025',yearMarathi:'२०२५'},{'year':'2026',yearMarathi:'२०२६'},{'year':'2027',yearMarathi:'२०२७'},{'year':'2028',yearMarathi:'२०२८'},{'year':'2029',yearMarathi:'२०२९'},{'year':'2030',yearMarathi:'२०३०'}]}";out.write(s);
+%>
