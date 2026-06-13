@@ -170,16 +170,18 @@
         			<th rowspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;विभाग&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
         			<th rowspan="2">मुंगदाळ</th>
         			<th rowspan="2">तुर डाळ</th>
+					<th rowspan="2">Extra2</th>
         			<th rowspan="2">मुंग</th>
         			<th rowspan="2">मटकी</th>
         			<th rowspan="2">हरभरा</th>
                     <th rowspan="2">वटाणा</th>
                     <th rowspan="2">सोया वडी</th>
-					<th rowspan="2">Extra2</th>
+                    <!--
 					<th rowspan="2">Extra3</th>
 					<th rowspan="2">Extra4</th>
 					<th rowspan="2">Extra5</th>
 					<th rowspan="2">Extra6</th>
+					-->
                     <th rowspan="2">चवळी</th>
         			<th colspan="6">मसाल्याचे पदार्थ</th>
       			</tr>
@@ -220,16 +222,18 @@
 					<td class="bold"><%=s4.getTalukaMarathi() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getMungdaal() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getMatki() %></td>
+					<td class="fontMarathiNumber right"><%=s4.getExtra2() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getMung() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getMasuldaal() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getHarbara() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getVatana() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getExtra1() %></td>
-					<td class="fontMarathiNumber right"><%=s4.getExtra2() %></td>
+					<!--
 					<td class="fontMarathiNumber right"><%=s4.getExtra3() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getExtra4() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getExtra5() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getExtra6() %></td>
+					-->
 					<td class="fontMarathiNumber right"><%=s4.getChvli() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getTel() %></td>
 					<td class="fontMarathiNumber right"><%=s4.getMith() %></td>
@@ -278,16 +282,18 @@
 					<td colspan="2" class="bold">एकुण मागणी</td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getMungdaal()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getMatki()) %></td>
+					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra2()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getMung()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getMasuldaal()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getHarbara()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getVatana()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra1()) %></td>
-					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra2()) %></td>
+					<!--
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra3()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra4()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra5()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getExtra6()) %></td>
+					-->
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getChvli()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getTel()) %></td>
 					<td class="fontMarathiNumberBold right"><%=tdf.format(sum.getMith()) %></td>

@@ -110,16 +110,18 @@
                     <th >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;विभाग&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>>
                     <th >मुंगदाळ</th>
 					<th >तुर डाळ</th>
+                    <th >Extra2</th>
 					<th >मुंग</th>
 					<th >मटकी</th>
 					<th >हरभरा</th>
 					<th >वटाणा</th>
 					<th >सोया वडी</th>
-                    <th >Extra2</th>
+					<!--
                     <th >Extra3</th>
                     <th >Extra4</th>
                     <th >Extra5</th>
                     <th >Extra6</th>
+                    -->
 					<th >चवळी</th>
                     <th >तेल (सोया अॅगमार्क)</th>
                     <th >मीठ (आयोडिनयुक्त)</th>
@@ -158,16 +160,18 @@
                     <th ><%=sectionWiseItemSum.getSectionMarathi() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getMungdaal() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getMatki() %></th>
+                    <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra2() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getMung() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getMasuldaal() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getHarbara() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getVatana() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra1() %></th>
-                    <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra2() %></th>
+                    <!--
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra3() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra4() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra5() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra6() %></th>
+                    -->
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getChvli() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getTel() %></th>
                     <th class="fontMarathiNumber"><%=sectionWiseItemSum.getMith() %></th>
@@ -183,16 +187,18 @@
                     <th colspan="2">एकूण</th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getMungdaal()) %></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getMatki()) %></th>
+                    <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra2())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getMung())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getMasuldaal())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getHarbara())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getVatana())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra1())%></th>
-                    <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra2())%></th>
+                    <!--
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra3())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra4())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra5())%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getExtra6())%></th>
+                    -->
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getChvli() )%></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getTel()) %></th>
                     <th class="fontMarathiNumber"><%= oneDecimalFormatter.format(allSum.getMith()) %></th>

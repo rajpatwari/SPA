@@ -634,6 +634,21 @@ Ext.onReady(function()
             summaryType: 'sum2'
         },
         {
+            header: '<b>extra2</b>',
+            width:70,
+            sortable: true,
+            dataIndex:'extra2',
+            align:'center',
+            editor: new Ext.form.NumberField(
+                {
+                    allowBlank: false,
+                    allowNegative: false,
+                    selectOnFocus : true,
+                    decimalPrecision: 3
+                }),
+            summaryType: 'sum16'
+        },
+        {
             header: '<b>मुंग</b>',
             width:70,
             sortable: true,
@@ -708,21 +723,6 @@ Ext.onReady(function()
                 decimalPrecision: 3
             }),
             summaryType: 'sum15'
-        },
-        {
-            header: '<b>extra2</b>',
-            width:70,
-            sortable: true,
-            dataIndex:'extra2',
-            align:'center',
-            editor: new Ext.form.NumberField(
-            {
-                allowBlank: false,
-                allowNegative: false,
-                selectOnFocus : true,
-                decimalPrecision: 3
-            }),
-            summaryType: 'sum16'
         },
         {
             header: '<b>extra3</b>',
@@ -1032,6 +1032,22 @@ Ext.onReady(function()
             summaryType: 'sum2'
         },
         {
+            header: '<b>extra2</b>',
+            width:70,
+            sortable: true,
+            dataIndex:'extra2',
+            align:'center',
+            editor: new Ext.form.NumberField(
+                {
+                    allowBlank: false,
+                    allowNegative: false,
+                    selectOnFocus : true,
+                    decimalPrecision: 3,
+                    allowNegative: true
+                }),
+            summaryType: 'sum16'
+        },
+        {
             header: '<b>मुंग</b>',
             width:70,
             sortable: true,
@@ -1111,22 +1127,6 @@ Ext.onReady(function()
                 allowNegative: true
             }),
             summaryType: 'sum15'
-        },
-        {
-            header: '<b>extra2</b>',
-            width:70,
-            sortable: true,
-            dataIndex:'extra2',
-            align:'center',
-            editor: new Ext.form.NumberField(
-            {
-                allowBlank: false,
-                allowNegative: false,
-                selectOnFocus : true,
-                decimalPrecision: 3,
-                allowNegative: true
-            }),
-            summaryType: 'sum16'
         },
         {
             header: '<b>extra3</b>',
@@ -1442,6 +1442,21 @@ Ext.onReady(function()
             summaryType: 'sum2'
         },
         {
+            header: '<b>extra2</b>',
+            width:70,
+            sortable: true,
+            dataIndex:'extra2',
+            align:'center',
+            editor: new Ext.form.NumberField(
+                {
+                    allowBlank: false,
+                    allowNegative: false,
+                    selectOnFocus : true,
+                    decimalPrecision: 3
+                }),
+            summaryType: 'sum16'
+        },
+        {
             header: '<b>मुंग</b>',
             width:70,
             sortable: true,
@@ -1516,21 +1531,6 @@ Ext.onReady(function()
                 decimalPrecision: 3
             }),
             summaryType: 'sum15'
-        },
-        {
-            header: '<b>extra2</b>',
-            width:70,
-            sortable: true,
-            dataIndex:'extra2',
-            align:'center',
-            editor: new Ext.form.NumberField(
-            {
-                allowBlank: false,
-                allowNegative: false,
-                selectOnFocus : true,
-                decimalPrecision: 3
-            }),
-            summaryType: 'sum16'
         },
         {
             header: '<b>extra3</b>',
@@ -1790,16 +1790,16 @@ Ext.onReady(function()
         {            
             cm1.setHidden(7,false);// मुंगदाळ
             cm1.setHidden(8,false);//तुर डाळ
-            cm1.setHidden(9,false);// चवळी / मुंग
-            cm1.setHidden(10,false);// मटकी
-            cm1.setHidden(11,false);
+            cm1.setHidden(9,false); //extra2
+            cm1.setHidden(10,false);// चवळी / मुंग
+            cm1.setHidden(11,false);// मटकी
             cm1.setHidden(12,false);
-            cm1.setHidden(13,false); //extra1
-            cm1.setHidden(14,false); //extra2
-            cm1.setHidden(15,false); //extra3
-            cm1.setHidden(16,false); //extra4
-            cm1.setHidden(17,false); //extra5
-            cm1.setHidden(18,false); //extra6
+            cm1.setHidden(13,false);
+            cm1.setHidden(14,false); //extra1
+            cm1.setHidden(15,true); //extra3
+            cm1.setHidden(16,true); //extra4
+            cm1.setHidden(17,true); //extra5
+            cm1.setHidden(18,true); //extra6
             cm1.setHidden(19,false);
             cm1.setHidden(20,false);// तेल
             cm1.setHidden(21,false);
@@ -1813,12 +1813,12 @@ Ext.onReady(function()
         {            
             cm1.setHidden(7,true);// मुंगदाळ
             cm1.setHidden(8,true);//तुर डाळ
-            cm1.setHidden(9,true);// चवळी / मुंग
-            cm1.setHidden(10,true);// मटकी
-            cm1.setHidden(11,true);
+            cm1.setHidden(9,true); //extra2
+            cm1.setHidden(10,true);// चवळी / मुंग
+            cm1.setHidden(11,true);// मटकी
             cm1.setHidden(12,true);
-            cm1.setHidden(13,true); //extra1
-            cm1.setHidden(14,true); //extra2
+            cm1.setHidden(13,true);
+            cm1.setHidden(14,true); //extra1
             cm1.setHidden(15,true); //extra3
             cm1.setHidden(16,true); //extra4
             cm1.setHidden(17,true); //extra5
@@ -1865,16 +1865,16 @@ Ext.onReady(function()
         {            
             cm1.setHidden(5,false);
             cm1.setHidden(6,false);
-            cm1.setHidden(7,false);
+            cm1.setHidden(7,false); //extra2
             cm1.setHidden(8,false);
             cm1.setHidden(9,false);
             cm1.setHidden(10,false);
-            cm1.setHidden(11,false); //extra1
-            cm1.setHidden(12,false); //extra2
-            cm1.setHidden(13,false); //extra3
-            cm1.setHidden(14,false); //extra4
-            cm1.setHidden(15,false); //extra5
-            cm1.setHidden(16,false); //extra6
+            cm1.setHidden(11,false);
+            cm1.setHidden(12,false); //extra1
+            cm1.setHidden(13,true); //extra3
+            cm1.setHidden(14,true); //extra4
+            cm1.setHidden(15,true); //extra5
+            cm1.setHidden(16,true); //extra6
             cm1.setHidden(17,false);
             cm1.setHidden(18,false);// तेल
             cm1.setHidden(19,false);
@@ -1888,12 +1888,12 @@ Ext.onReady(function()
         {
             cm1.setHidden(5,true);
             cm1.setHidden(6,true);
-            cm1.setHidden(7,true);
+            cm1.setHidden(7,true); //extra2
             cm1.setHidden(8,true);
             cm1.setHidden(9,true);
             cm1.setHidden(10,true);
-            cm1.setHidden(11,true); //extra1
-            cm1.setHidden(12,true); //extra2
+            cm1.setHidden(11,true);
+            cm1.setHidden(12,true); //extra1
             cm1.setHidden(13,true); //extra3
             cm1.setHidden(14,true); //extra4
             cm1.setHidden(15,true); //extra5
@@ -1940,16 +1940,16 @@ Ext.onReady(function()
         {   
             cm.setHidden(3,false);
             cm.setHidden(4,false);
-            cm.setHidden(5,false);// चवळी / मुंग
-            cm.setHidden(6,false);
+            cm.setHidden(5,false); //extra2
+            cm.setHidden(6,false);// चवळी / मुंग
             cm.setHidden(7,false);
             cm.setHidden(8,false);
-            cm.setHidden(9,false); //extra1
-            cm.setHidden(10,false); //extra2
-            cm.setHidden(11,false); //extra3
-            cm.setHidden(12,false); //extra4
-            cm.setHidden(13,false); //extra5
-            cm.setHidden(14,false); //extra6
+            cm.setHidden(9,false);
+            cm.setHidden(10,false); //extra1
+            cm.setHidden(11,true); //extra3
+            cm.setHidden(12,true); //extra4
+            cm.setHidden(13,true); //extra5
+            cm.setHidden(14,true); //extra6
             cm.setHidden(15,false);
             cm.setHidden(16,false);// तेल
             cm.setHidden(17,false);
@@ -1963,12 +1963,12 @@ Ext.onReady(function()
         {
             cm.setHidden(3,true);
             cm.setHidden(4,true);
-            cm.setHidden(5,true);
+            cm.setHidden(5,true); //extra2
             cm.setHidden(6,true);
             cm.setHidden(7,true);
             cm.setHidden(8,true);
-            cm.setHidden(9,true); //extra1
-            cm.setHidden(10,true); //extra2
+            cm.setHidden(9,true);
+            cm.setHidden(10,true); //extra1
             cm.setHidden(11,true); //extra3
             cm.setHidden(12,true); //extra4
             cm.setHidden(13,true); //extra5
@@ -2019,16 +2019,16 @@ Ext.onReady(function()
         {
             cm.setHidden(3,false);
             cm.setHidden(4,false);
-            cm.setHidden(5,false);// चवळी / मुंग
-            cm.setHidden(6,false);
+            cm.setHidden(5,false); //extra2
+            cm.setHidden(6,false);// चवळी / मुंग
             cm.setHidden(7,false);
             cm.setHidden(8,false);
-            cm.setHidden(9,false); //extra1
-            cm.setHidden(10,false); //extra2
-            cm.setHidden(11,false); //extra3
-            cm.setHidden(12,false); //extra4
-            cm.setHidden(13,false); //extra5
-            cm.setHidden(14,false); //extra6
+            cm.setHidden(9,false);
+            cm.setHidden(10,false); //extra1
+            cm.setHidden(11,true); //extra3
+            cm.setHidden(12,true); //extra4
+            cm.setHidden(13,true); //extra5
+            cm.setHidden(14,true); //extra6
             cm.setHidden(15,false);
             cm.setHidden(16,false);// तेल
             cm.setHidden(17,false);
@@ -2042,12 +2042,12 @@ Ext.onReady(function()
         {
             cm.setHidden(3,true);
             cm.setHidden(4,true);
-            cm.setHidden(5,true);
+            cm.setHidden(5,true); //extra2
             cm.setHidden(6,true);
             cm.setHidden(7,true);
             cm.setHidden(8,true);
-            cm.setHidden(9,true); //extra1
-            cm.setHidden(10,true); //extra2
+            cm.setHidden(9,true);
+            cm.setHidden(10,true); //extra1
             cm.setHidden(11,true); //extra3
             cm.setHidden(12,true); //extra4
             cm.setHidden(13,true); //extra5
@@ -3355,6 +3355,14 @@ Ext.onReady(function()
             summaryType: 'sum'
         },
         {
+            header: '<b>extra2</b>',
+            width:90,
+            sortable: true,
+            dataIndex:'extra2',
+            align:'center',
+            summaryType: 'sum'
+        },
+        {
             header: '<b>मटकी</b>',
             width:90,
             sortable: true,
@@ -3383,14 +3391,6 @@ Ext.onReady(function()
             width:90,
             sortable: true,
             dataIndex:'extra1',
-            align:'center',
-            summaryType: 'sum'
-        },
-        {
-            header: '<b>extra2</b>',
-            width:90,
-            sortable: true,
-            dataIndex:'extra2',
             align:'center',
             summaryType: 'sum'
         },
@@ -3728,6 +3728,14 @@ Ext.onReady(function()
             summaryType: 'sum'
         },
         {
+            header: '<b>extra2</b>',
+            width:90,
+            sortable: true,
+            dataIndex:'extra2',
+            align:'center',
+            summaryType: 'sum'
+        },
+        {
             header: '<b>मुंग</b>',
             width:90,
             sortable: true,
@@ -3764,14 +3772,6 @@ Ext.onReady(function()
             width:90,
             sortable: true,
             dataIndex:'extra1',
-            align:'center',
-            summaryType: 'sum'
-        },
-        {
-            header: '<b>extra2</b>',
-            width:90,
-            sortable: true,
-            dataIndex:'extra2',
             align:'center',
             summaryType: 'sum'
         },

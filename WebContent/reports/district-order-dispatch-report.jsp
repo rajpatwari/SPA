@@ -232,19 +232,21 @@
                     <th>ऑपरेटर</th>
                     <th>गाडी क्र.</th>
                     <th >मुंगदाळ</th>
-					<th >तुर डाळ</th>
-					<th >मुंग</th>
-					<th >मटकी</th>
-					<th >हरभरा</th>
-                    <th >वटाणा</th>
-					<th >सोया वडी</th>
+                    <th >तुर डाळ</th>
                     <th >Extra2</th>
+                    <th >मुंग</th>
+                    <th >मटकी</th>
+                    <th >हरभरा</th>
+                    <th >वटणा</th>
+                    <th >सोया वडी</th>
+                    <!--
                     <th >Extra3</th>
                     <th >Extra4</th>
                     <th >Extra5</th>
                     <th >Extra6</th>
+                    -->
                     <th >चवळी</th>
-					<th >तेल (सोया अॅगमार्क)</th>
+                    <th >तेल (सोया अॅगमार्क)</th>
                     <th >मीठ (आयोडिनयुक्त)</th>
                     <th >कांदा लसूण मसाला</th>
                     <th >हळद (अॅगमार्क)</th>
@@ -259,18 +261,20 @@
                     <td class="fontMarathiNumber "><%=d.getBiltyNo()%></td>
                     <td class="fontMarathiNumber "><%=d.getAgentName()%></td>
                     <td class="fontMarathiNumber "><%=d.getVehicleNumber()%></td>
-					<th class="fontMarathiNumber"><%=d.getMungdaal() %></th>
+                    <th class="fontMarathiNumber"><%=d.getMungdaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getMatki() %></th>
+                    <th class="fontMarathiNumber"><%=d.getExtra2() %></th>
                     <th class="fontMarathiNumber"><%=d.getMung() %></th>
                     <th class="fontMarathiNumber"><%=d.getMasuldaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getHarbara() %></th>
                     <th class="fontMarathiNumber"><%=d.getVatana() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra1() %></th>
-                    <th class="fontMarathiNumber"><%=d.getExtra2() %></th>
+                    <!--
                     <th class="fontMarathiNumber"><%=d.getExtra3() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra4() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra5() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra6() %></th>
+                    -->
                     <th class="fontMarathiNumber"><%=d.getChvli() %></th>
                     <th class="fontMarathiNumber"><%=d.getTel() %></th>
                     <th class="fontMarathiNumber"><%=d.getMith() %></th>
@@ -318,16 +322,18 @@
 			<tr>	
 				<th >मुंगदाळ</th>
 				<th >तुर डाळ</th>
+				<th >Extra2</th>
 				<th >मुंग</th>
 				<th >मटकी</th>
 				<th >हरभरा</th>
   				<th >वटाणा</th>
 				<th >सोया वडी</th>
-	  			<th >Extra2</th>
+	  			<!--
 	  			<th >Extra3</th>
 	  			<th >Extra4</th>
 	  			<th >Extra5</th>
 	  			<th >Extra6</th>
+	  			-->
 	  			<th >चवळी</th>
 				<th >तेल (सोया अॅगमार्क)</th>
 				<th >मीठ (आयोडिनयुक्त)</th>
@@ -339,17 +345,19 @@
 			<tr>
 			    <th class="fontMarathiNumber"><%=allSum.getMungdaal() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getMatki() %></th>
+			    <th class="fontMarathiNumber"><%=allSum.getExtra2() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getMung() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getMasuldaal() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getHarbara() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getVatana() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getExtra1() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getExtra2() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getExtra3() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getExtra4() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getExtra5() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getExtra6() %></th>
-      			<th class="fontMarathiNumber"><%=allSum.getChvli() %></th>
+       			<th class="fontMarathiNumber"><%=allSum.getVatana() %></th>
+       			<th class="fontMarathiNumber"><%=allSum.getExtra1() %></th>
+       			<!--
+       			<th class="fontMarathiNumber"><%=allSum.getExtra3() %></th>
+       			<th class="fontMarathiNumber"><%=allSum.getExtra4() %></th>
+       			<th class="fontMarathiNumber"><%=allSum.getExtra5() %></th>
+       			<th class="fontMarathiNumber"><%=allSum.getExtra6() %></th>
+       			-->
+       			<th class="fontMarathiNumber"><%=allSum.getChvli() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getTel() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getMith() %></th>
 			    <th class="fontMarathiNumber"><%=allSum.getMirchi() %></th>

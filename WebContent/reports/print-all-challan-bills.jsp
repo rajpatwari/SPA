@@ -275,6 +275,15 @@ P.breakhere {
 					<tr>
 						<th class="fontMarathiNumber"><%=3%></th>
 						<th class="fontMarathiNumber">1901</th>
+						<th class="fontsize12 center">Extra2</th>
+						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra2() %></th>
+						<th class="fontMarathiNumber" style="text-align:right">80.00</th>
+						<th class="fontMarathiNumber"></th>
+						<th class="fontMarathiNumber" style="text-align:right"><%=extra2 %></th>
+					</tr>
+					<tr>
+						<th class="fontMarathiNumber"><%=4%></th>
+						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">मुंग</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getMung() %></th>
 						<th class="fontMarathiNumber" style="text-align:right">83.00</th>
@@ -282,7 +291,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=mung %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=4%></th>
+						<th class="fontMarathiNumber"><%=5%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">मटकी</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getMasuldaal() %></th>
@@ -291,7 +300,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=masurdaal %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=5%></th>
+						<th class="fontMarathiNumber"><%=6%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">हरभरा</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getHarbara() %></th>
@@ -300,7 +309,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=harbara %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=6%></th>
+						<th class="fontMarathiNumber"><%=7%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">वटाणा</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getVatana() %></th>
@@ -309,23 +318,16 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=vatana %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=7%></th>
+						<th class="fontMarathiNumber"><%=8%></th>
 						<th class="fontMarathiNumber">1901</th>
-						<th class="fontsize12 center">Extra1</th>
+						<th class="fontsize12 center">सोया वडी</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra1() %></th>
 						<th class="fontMarathiNumber" style="text-align:right">80.00</th>
 						<th class="fontMarathiNumber"></th>
 						<th class="fontMarathiNumber" style="text-align:right"><%=extra1 %></th>
 					</tr>
-					<tr>
-						<th class="fontMarathiNumber"><%=8%></th>
-						<th class="fontMarathiNumber">1901</th>
-						<th class="fontsize12 center">Extra2</th>
-						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getExtra2() %></th>
-						<th class="fontMarathiNumber" style="text-align:right">80.00</th>
-						<th class="fontMarathiNumber"></th>
-						<th class="fontMarathiNumber" style="text-align:right"><%=extra2 %></th>
-					</tr>
+					<!-- Extra3..Extra6 hidden -->
+					<!--
 					<tr>
 						<th class="fontMarathiNumber"><%=9%></th>
 						<th class="fontMarathiNumber">1901</th>
@@ -362,8 +364,9 @@ P.breakhere {
 						<th class="fontMarathiNumber"></th>
 						<th class="fontMarathiNumber" style="text-align:right"><%=extra6 %></th>
 					</tr>
+					-->
 					<tr>
-						<th class="fontMarathiNumber"><%=13%></th>
+						<th class="fontMarathiNumber"><%=9%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">चवली</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getChvli() %></th>
@@ -372,7 +375,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=watana %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=14%></th>
+						<th class="fontMarathiNumber"><%=10%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">तेल (सोया अॅगमार्क)</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getTel() %></th>
@@ -381,7 +384,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=tel %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=15%></th>
+						<th class="fontMarathiNumber"><%=11%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">मीठ (आयोडिनयुक्त)</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getMith() %></th>
@@ -390,7 +393,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=meet %></th>
 					</tr>						
 					<tr>
-						<th class="fontMarathiNumber"><%=16%></th>
+						<th class="fontMarathiNumber"><%=12%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">कांदा लसूण मसाला</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getMirchi() %></th>
@@ -399,7 +402,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=kanda %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=17%></th>
+						<th class="fontMarathiNumber"><%=13%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">हळद (अॅगमार्क)</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getHalad() %></th>
@@ -408,7 +411,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=halad %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=18%></th>
+						<th class="fontMarathiNumber"><%=14%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">जिरे</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getJire() %></th>
@@ -417,7 +420,7 @@ P.breakhere {
 						<th class="fontMarathiNumber" style="text-align:right"><%=jire %></th>
 					</tr>
 					<tr>
-						<th class="fontMarathiNumber"><%=19%></th>
+						<th class="fontMarathiNumber"><%=15%></th>
 						<th class="fontMarathiNumber">1901</th>
 						<th class="fontsize12 center">मोहरी</th>
 						<th class="fontMarathiNumber"><%=sectionWiseItemSum.getMohari() %></th>

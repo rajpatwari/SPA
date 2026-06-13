@@ -97,16 +97,18 @@
                 <tr>
                     <th >मुंगदाळ</th>
 					<th >तुर डाळ</th>
+                    <th >Extra2</th>
 					<th >मुंग</th>
 					<th >मटकी</th>
 					<th >हरभरा</th>
 					<th >वटाणा</th>
 					<th >सोया वडी</th>
-                    <th >Extra2</th>
+                    <!--
                     <th >Extra3</th>
                     <th >Extra4</th>
                     <th >Extra5</th>
                     <th >Extra6</th>
+                    -->
 					<th >चवळी</th>
                     <th >तेल (सोया अॅगमार्क)</th>
                     <th >मीठ (आयोडिनयुक्त)</th>
@@ -121,16 +123,18 @@
                 <tr>
                     <th class="fontMarathiNumber"><%=s.getMungdaal() %></th>
                     <th class="fontMarathiNumber"><%=s.getMatki() %></th>
+                    <th class="fontMarathiNumber"><%=s.getExtra2() %></th>
                     <th class="fontMarathiNumber"><%=s.getMung() %></th>
                     <th class="fontMarathiNumber"><%=s.getMasuldaal() %></th>
                     <th class="fontMarathiNumber"><%=s.getHarbara() %></th>
                     <th class="fontMarathiNumber"><%=s.getVatana() %></th>
                     <th class="fontMarathiNumber"><%=s.getExtra1() %></th>
-                    <th class="fontMarathiNumber"><%=s.getExtra2() %></th>
+                    <!--
                     <th class="fontMarathiNumber"><%=s.getExtra3() %></th>
                     <th class="fontMarathiNumber"><%=s.getExtra4() %></th>
                     <th class="fontMarathiNumber"><%=s.getExtra5() %></th>
                     <th class="fontMarathiNumber"><%=s.getExtra6() %></th>
+                    -->
                     <th class="fontMarathiNumber"><%=s.getChvli() %></th>
                     <th class="fontMarathiNumber"><%=s.getTel() %></th>
                     <th class="fontMarathiNumber"><%=s.getMith() %></th>

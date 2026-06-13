@@ -383,9 +383,9 @@
 	}
 	if(talukaOrderHelper.getOrderType() == 2)
 	{
-        	weightTotal= s2.getMungdaal() + s2.getMatki() + s2.getMung() + s2.getMasuldaal() + s2.getHarbara() + s2.getVatana() + s2.getExtra1() + s2.getExtra2() + s2.getExtra3() + s2.getExtra4() + s2.getExtra5() + s2.getExtra6() + s2.getChvli() + s2.getTel() + s2.getMith() + s2.getMirchi() + s2.getHalad() + s2.getJire() + s2.getMohari() ;
-        	taxTotal= ((s2.getMungdaal())*((rate.getMungdaal()*vat.getMungdaal())/(100+vat.getMungdaal())))+((s2.getMatki())*((rate.getMatki()*vat.getMatki())/(100+vat.getMatki())))+((s2.getMung())*((rate.getMung()*vat.getMung())/(100+vat.getMung()))) +((s2.getMasuldaal())*((rate.getMasuldaal()*vat.getMasuldaal())/(100+vat.getMasuldaal()))) +((s2.getHarbara())*((rate.getHarbara()*vat.getHarbara())/(100+vat.getHarbara())))+((s2.getVatana())*((rate.getVatana()*vat.getVatana())/(100+vat.getVatana())))+((s2.getExtra1())*((rate.getExtra1()*vat.getExtra1())/(100+vat.getExtra1())))+((s2.getExtra2())*((rate.getExtra2()*vat.getExtra2())/(100+vat.getExtra2())))+((s2.getExtra3())*((rate.getExtra3()*vat.getExtra3())/(100+vat.getExtra3())))+((s2.getExtra4())*((rate.getExtra4()*vat.getExtra4())/(100+vat.getExtra4())))+((s2.getExtra5())*((rate.getExtra5()*vat.getExtra5())/(100+vat.getExtra5())))+((s2.getExtra6())*((rate.getExtra6()*vat.getExtra6())/(100+vat.getExtra6())))+((s2.getChvli())*((rate.getChvli()*vat.getChvli())/(100+vat.getChvli())))+((s2.getTel())*((rate.getTel()*vat.getTel())/(100+vat.getTel())))+((s2.getMith())*((rate.getMith()*vat.getMith())/(100+vat.getMith())))+((s2.getMirchi())*((rate.getMirchi()*vat.getMirchi())/(100+vat.getMirchi())))+((s2.getHalad())*((rate.getHalad()*vat.getHalad())/(100+vat.getHalad())))+((s2.getJire())*((rate.getJire()*vat.getJire())/(100+vat.getJire())))+(s2.getMohari())*((rate.getMohari()*vat.getMohari())/(100+vat.getMohari()));
-        	amountTotal = (s2.getMungdaal()*rate.getMungdaal())+(s2.getMatki()*rate.getMatki())+(s2.getMung()*rate.getMung())+(s2.getMasuldaal()*rate.getMasuldaal())+(s2.getHarbara()*rate.getHarbara())+(s2.getVatana()*rate.getVatana())+(s2.getExtra1()*rate.getExtra1())+(s2.getExtra2()*rate.getExtra2())+(s2.getExtra3()*rate.getExtra3())+(s2.getExtra4()*rate.getExtra4())+(s2.getExtra5()*rate.getExtra5())+(s2.getExtra6()*rate.getExtra6())+(s2.getChvli()*rate.getChvli())+(s2.getTel()*rate.getTel())+(s2.getMith()*rate.getMith())+(s2.getMirchi()*rate.getMirchi())+(s2.getHalad()*rate.getHalad())+(s2.getJire()*rate.getJire())+(s2.getMohari()*rate.getMohari());
+    	weightTotal= s2.getMungdaal() + s2.getMatki() + s2.getMung() + s2.getMasuldaal() + s2.getHarbara() + s2.getVatana() + s2.getExtra1() + s2.getExtra2() + s2.getExtra3() + s2.getExtra4() + s2.getExtra5() + s2.getExtra6() + s2.getChvli() + s2.getTel() + s2.getMith() + s2.getMirchi() + s2.getHalad() + s2.getJire() + s2.getMohari() ;
+    	taxTotal= ((s2.getMungdaal())*((rate.getMungdaal()*vat.getMungdaal())/(100+vat.getMungdaal())))+((s2.getMatki())*((rate.getMatki()*vat.getMatki())/(100+vat.getMatki())))+((s2.getMung())*((rate.getMung()*vat.getMung())/(100+vat.getMung()))) +((s2.getMasuldaal())*((rate.getMasuldaal()*vat.getMasuldaal())/(100+vat.getMasuldaal()))) +((s2.getHarbara())*((rate.getHarbara()*vat.getHarbara())/(100+vat.getHarbara())))+((s2.getVatana())*((rate.getVatana()*vat.getVatana())/(100+vat.getVatana())))+((s2.getExtra1())*((rate.getExtra1()*vat.getExtra1())/(100+vat.getExtra1())))+((s2.getExtra2())*((rate.getExtra2()*vat.getExtra2())/(100+vat.getExtra2())))+((s2.getExtra3())*((rate.getExtra3()*vat.getExtra3())/(100+vat.getExtra3())))+((s2.getExtra4())*((rate.getExtra4()*vat.getExtra4())/(100+vat.getExtra4())))+((s2.getExtra5())*((rate.getExtra5()*vat.getExtra5())/(100+vat.getExtra5())))+((s2.getExtra6())*((rate.getExtra6()*vat.getExtra6())/(100+vat.getExtra6())))+((s2.getChvli())*((rate.getChvli()*vat.getChvli())/(100+vat.getChvli())))+((s2.getTel())*((rate.getTel()*vat.getTel())/(100+vat.getTel())))+((s2.getMith())*((rate.getMith()*vat.getMith())/(100+vat.getMith())))+((s2.getMirchi())*((rate.getMirchi()*vat.getMirchi())/(100+vat.getMirchi())))+((s2.getHalad())*((rate.getHalad()*vat.getHalad())/(100+vat.getHalad())))+((s2.getJire())*((rate.getJire()*vat.getJire())/(100+vat.getJire())))+(s2.getMohari())*((rate.getMohari()*vat.getMohari())/(100+vat.getMohari()));
+    	amountTotal = (s2.getMungdaal()*rate.getMungdaal())+(s2.getMatki()*rate.getMatki())+(s2.getMung()*rate.getMung())+(s2.getMasuldaal()*rate.getMasuldaal())+(s2.getHarbara()*rate.getHarbara())+(s2.getVatana()*rate.getVatana())+(s2.getExtra1()*rate.getExtra1())+(s2.getExtra2()*rate.getExtra2())+(s2.getExtra3()*rate.getExtra3())+(s2.getExtra4()*rate.getExtra4())+(s2.getExtra5()*rate.getExtra5())+(s2.getExtra6()*rate.getExtra6())+(s2.getChvli()*rate.getChvli())+(s2.getTel()*rate.getTel())+(s2.getMith()*rate.getMith())+(s2.getMirchi()*rate.getMirchi())+(s2.getHalad()*rate.getHalad())+(s2.getJire()*rate.getJire())+(s2.getMohari()*rate.getMohari());
 %>
 		<form  action="../create/create-invoice.jsp" accept-charset="ISO-8859-1" method="POST" onsubmit="return validate(this)">
             <input type="hidden" name="orderID" value="<%=orderID%>" >
@@ -435,24 +435,32 @@
 	                </tr>
             	</thead>
             	<tbody class="fontsize15" class="center">
-            		<tr class="fontMarathiNumber right">
-            			<td> <center>1</center> </td>
-            			<td> <center>मुंगदाळ</center> </td>
-            			<td><%=threeDecimalFormatter.format(s2.getMungdaal())%></td>
-            			<td><%=twoDecimalFormatter.format(rate.getMungdaal())%></td>
+	                <tr class="fontMarathiNumber right">
+	                    <td> <center>1</center> </td>
+	                    <td> <center>मुंगदाळ</center> </td>
+	                    <td><%=threeDecimalFormatter.format(s2.getMungdaal())%></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getMungdaal())%></td>
 	                    <td><%if(vat.getMungdaal()!=0){out.print(twoDecimalFormatter.format((s2.getMungdaal())*((rate.getMungdaal()*vat.getMungdaal())/(100+vat.getMungdaal()))));} %></td>
 	                    <td><%=twoDecimalFormatter.format(s2.getMungdaal()*rate.getMungdaal()) %></td>
-            		</tr>
-	                <tr class="fontMarathiNumber right">
-	                	<td><center>2</center> </td>
-	                	<td><center>तुर डाळ</center> </td>
-	                	<td><%=threeDecimalFormatter.format(s2.getMatki()) %></td>
-	                	<td><%=twoDecimalFormatter.format(rate.getMatki()) %></td>
-	                    <td><%if(vat.getMatki()!=0){out.print(twoDecimalFormatter.format((s2.getMatki())*((rate.getMatki()*vat.getMatki())/(100+vat.getMatki()))));} %></td>
-	                    <td><%=twoDecimalFormatter.format(s2.getMatki()*rate.getMatki()) %></td>            
 	                </tr>
-					<tr class="fontMarathiNumber right">
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>2</center> </td>
+	                    <td><center>तुर डाळ</center> </td>
+	                    <td><%=threeDecimalFormatter.format(s2.getMatki()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getMatki()) %></td>
+	                    <td><%if(vat.getMatki()!=0){out.print(twoDecimalFormatter.format((s2.getMatki())*((rate.getMatki()*vat.getMatki())/(100+vat.getMatki()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getMatki()*rate.getMatki()) %></td>
+	                </tr>
+	                <tr class="fontMarathiNumber right">
 	                    <td><center>3</center></td>
+	                    <td><center>Extra2</center></td>
+	                    <td><%=threeDecimalFormatter.format(s2.getExtra2()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getExtra2()) %></td>
+	                    <td><%if(vat.getExtra2()!=0){out.print(twoDecimalFormatter.format((s2.getExtra2())*((rate.getExtra2()*vat.getExtra2())/(100+vat.getExtra2()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getExtra2()*rate.getExtra2()) %></td>
+	                </tr>
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>4</center></td>
 	                    <td><center>मुंग</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getMung()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getMung()) %> </td>
@@ -460,7 +468,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getMung()*rate.getMung()) %></td>
 	                </tr>
 	                <tr class="fontMarathiNumber right">
-	                	<td><center>4</center></td>
+	                    <td><center>5</center></td>
 	                    <td><center>मटकी</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getMasuldaal()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getMasuldaal()) %></td>
@@ -468,7 +476,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getMasuldaal()*rate.getMasuldaal()) %></td>
 	                </tr>
 	                <tr class="fontMarathiNumber right">
-	                	<td><center>5</center></td>
+	                    <td><center>6</center></td>
 	                    <td><center>हरभरा</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getHarbara()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getHarbara()) %></td>
@@ -476,63 +484,57 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getHarbara()*rate.getHarbara()) %></td>
 	                </tr>
 	                <tr class="fontMarathiNumber right">
-	                	<td><center>6</center></td>
+	                    <td><center>7</center></td>
 	                    <td><center>वटाणा</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getVatana()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getVatana()) %></td>
 	                    <td><%if(vat.getVatana()!=0){out.print(twoDecimalFormatter.format((s2.getVatana())*((rate.getVatana()*vat.getVatana())/(100+vat.getVatana()))));} %></td>
 	                    <td><%=twoDecimalFormatter.format(s2.getVatana()*rate.getVatana()) %></td>
 	                </tr>
-                    <tr class="fontMarathiNumber right">
-                    	<td><center>7</center></td>
-	                    <td><center>सोया वडी</center></td>
-                        <td><%=threeDecimalFormatter.format(s2.getExtra1()) %></td>
-                        <td><%=twoDecimalFormatter.format(rate.getExtra1()) %></td>
-                        <td><%if(vat.getExtra1()!=0){out.print(twoDecimalFormatter.format((s2.getExtra1())*((rate.getExtra1()*vat.getExtra1())/(100+vat.getExtra1()))));} %></td>
-                        <td><%=twoDecimalFormatter.format(s2.getExtra1()*rate.getExtra1()) %></td>
-                    </tr>
-                    <tr class="fontMarathiNumber right">
-                    	<td><center>8</center></td>
-                        <td><center>Extra2</center></td>
-                        <td><%=threeDecimalFormatter.format(s2.getExtra2()) %></td>
-                        <td><%=twoDecimalFormatter.format(rate.getExtra2()) %></td>
-                        <td><%if(vat.getExtra2()!=0){out.print(twoDecimalFormatter.format((s2.getExtra2())*((rate.getExtra2()*vat.getExtra2())/(100+vat.getExtra2()))));} %></td>
-                        <td><%=twoDecimalFormatter.format(s2.getExtra2()*rate.getExtra2()) %></td>
-                    </tr>
-                    <tr class="fontMarathiNumber right">
-                    	<td><center>9</center></td>
-                        <td><center>Extra3</center></td>
-                        <td><%=threeDecimalFormatter.format(s2.getExtra3()) %></td>
-                        <td><%=twoDecimalFormatter.format(rate.getExtra3()) %></td>
-                        <td><%if(vat.getExtra3()!=0){out.print(twoDecimalFormatter.format((s2.getExtra3())*((rate.getExtra3()*vat.getExtra3())/(100+vat.getExtra3()))));} %></td>
-                        <td><%=twoDecimalFormatter.format(s2.getExtra3()*rate.getExtra3()) %></td>
-                    </tr>
-                    <tr class="fontMarathiNumber right">
-                    	<td><center>10</center></td>
-                        <td><center>Extra4</center></td>
-                        <td><%=threeDecimalFormatter.format(s2.getExtra4()) %></td>
-                        <td><%=twoDecimalFormatter.format(rate.getExtra4()) %></td>
-                        <td><%if(vat.getExtra4()!=0){out.print(twoDecimalFormatter.format((s2.getExtra4())*((rate.getExtra4()*vat.getExtra4())/(100+vat.getExtra4()))));} %></td>
-                        <td><%=twoDecimalFormatter.format(s2.getExtra4()*rate.getExtra4()) %></td>
-                    </tr>
-                    <tr class="fontMarathiNumber right">
-                    	<td><center>11</center></td>
-                        <td><center>Extra5</center></td>
-                        <td><%=threeDecimalFormatter.format(s2.getExtra5()) %></td>
-                        <td><%=twoDecimalFormatter.format(rate.getExtra5()) %></td>
-                        <td><%if(vat.getExtra5()!=0){out.print(twoDecimalFormatter.format((s2.getExtra5())*((rate.getExtra5()*vat.getExtra5())/(100+vat.getExtra5()))));} %></td>
-                        <td><%=twoDecimalFormatter.format(s2.getExtra5()*rate.getExtra5()) %></td>
-                    </tr>
-                    <tr class="fontMarathiNumber right">
-                    	<td><center>12</center></td>
-                        <td><center>Extra6</center></td>
-                        <td><%=threeDecimalFormatter.format(s2.getExtra6()) %></td>
-                        <td><%=twoDecimalFormatter.format(rate.getExtra6()) %></td>
-                        <td><%if(vat.getExtra6()!=0){out.print(twoDecimalFormatter.format((s2.getExtra6())*((rate.getExtra6()*vat.getExtra6())/(100+vat.getExtra6()))));} %></td>
-                        <td><%=twoDecimalFormatter.format(s2.getExtra6()*rate.getExtra6()) %></td>
-                    </tr>
 	                <tr class="fontMarathiNumber right">
-	                    <td><center>13</center></td>
+	                    <td><center>8</center></td>
+	                    <td><center>सोया वडी</center></td>
+	                    <td><%=threeDecimalFormatter.format(s2.getExtra1()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getExtra1()) %></td>
+	                    <td><%if(vat.getExtra1()!=0){out.print(twoDecimalFormatter.format((s2.getExtra1())*((rate.getExtra1()*vat.getExtra1())/(100+vat.getExtra1()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getExtra1()*rate.getExtra1()) %></td>
+	                </tr>
+	                <!--
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>9</center></td>
+	                    <td><center>Extra3</center></td>
+	                    <td><%=threeDecimalFormatter.format(s2.getExtra3()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getExtra3()) %></td>
+	                    <td><%if(vat.getExtra3()!=0){out.print(twoDecimalFormatter.format((s2.getExtra3())*((rate.getExtra3()*vat.getExtra3())/(100+vat.getExtra3()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getExtra3()*rate.getExtra3()) %></td>
+	                </tr>
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>10</center></td>
+	                    <td><center>Extra4</center></td>
+	                    <td><%=threeDecimalFormatter.format(s2.getExtra4()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getExtra4()) %></td>
+	                    <td><%if(vat.getExtra4()!=0){out.print(twoDecimalFormatter.format((s2.getExtra4())*((rate.getExtra4()*vat.getExtra4())/(100+vat.getExtra4()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getExtra4()*rate.getExtra4()) %></td>
+	                </tr>
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>11</center></td>
+	                    <td><center>Extra5</center></td>
+	                    <td><%=threeDecimalFormatter.format(s2.getExtra5()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getExtra5()) %></td>
+	                    <td><%if(vat.getExtra5()!=0){out.print(twoDecimalFormatter.format((s2.getExtra5())*((rate.getExtra5()*vat.getExtra5())/(100+vat.getExtra5()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getExtra5()*rate.getExtra5()) %></td>
+	                </tr>
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>12</center></td>
+	                    <td><center>Extra6</center></td>
+	                    <td><%=threeDecimalFormatter.format(s2.getExtra6()) %></td>
+	                    <td><%=twoDecimalFormatter.format(rate.getExtra6()) %></td>
+	                    <td><%if(vat.getExtra6()!=0){out.print(twoDecimalFormatter.format((s2.getExtra6())*((rate.getExtra6()*vat.getExtra6())/(100+vat.getExtra6()))));} %></td>
+	                    <td><%=twoDecimalFormatter.format(s2.getExtra6()*rate.getExtra6()) %></td>
+	                </tr>
+	                -->
+	                <tr class="fontMarathiNumber right">
+	                    <td><center>9</center></td>
 	                    <td><center>चवली</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getChvli()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getChvli()) %></td>
@@ -540,7 +542,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getChvli()*rate.getChvli()) %></td>
 	                </tr>	                
 	                <tr class="fontMarathiNumber right">
-	                    <td><center>14</center></td>
+	                    <td><center>10</center></td>
 	                    <td><center>तेल (सोया अॅगमार्क)</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getTel()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getTel()) %></td>
@@ -548,7 +550,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getTel()*rate.getTel()) %></td>
 	                </tr>	                
 	                <tr class="fontMarathiNumber right">
-	                	<td><center>15</center></td>
+	                	<td><center>11</center></td>
 	                    <td><center>मीठ (आयोडिनयुक्त)</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getMith()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getMith()) %></td>
@@ -556,7 +558,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getMith()*rate.getMith()) %></td>                
 	                </tr>	                
 	                <tr class="fontMarathiNumber right">
-	                    <td><center>16</center></td>
+	                    <td><center>12</center></td>
 	                    <td><center>कांदा लसूण मसाला</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getMirchi()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getMirchi()) %></td>
@@ -564,7 +566,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getMirchi()*rate.getMirchi()) %></td>
 	                </tr>	  	                              
 	                <tr class="fontMarathiNumber right">
-	                    <td><center>17</center></td>
+	                    <td><center>13</center></td>
 	                    <td><center>हळद (अॅगमार्क)</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getHalad()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getHalad()) %></td>
@@ -572,7 +574,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getHalad()*rate.getHalad()) %></td>
 	                </tr>	              
 	                <tr class="fontMarathiNumber right">
-	                    <td><center>18</center></td>
+	                    <td><center>14</center></td>
 	                    <td><center>जिरे</center></td>
 	                    <td><%=threeDecimalFormatter.format(s2.getJire()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getJire()) %></td>
@@ -580,7 +582,7 @@
 	                    <td><%=twoDecimalFormatter.format(s2.getJire()*rate.getJire()) %></td>
 	                </tr>	                
 	                <tr class="fontMarathiNumber right">
-	                    <td><center>19</center></td>
+	                    <td><center>15</center></td>
 	                    <td><center>मोहरी</center></td>
 	                    <td ><%=threeDecimalFormatter.format(s2.getMohari()) %></td>
 	                    <td><%=twoDecimalFormatter.format(rate.getMohari()) %></td>

@@ -135,16 +135,18 @@
                     <td></td>
                     <th >मुंगदाळ</th>
 					<th >तुर डाळ</th>
+                    <th >Extra2</th>
 					<th >मुंग</th>
 					<th >मटकी</th>
 					<th >हरभरा</th>
 					<th >वटाणा</th>
 					<th >सोया वडी</th>
-                    <th >Extra2</th>
+<!--
                     <th >Extra3</th>
                     <th >Extra4</th>
                     <th >Extra5</th>
                     <th >Extra6</th>
+-->
 					<th >चवळी</th>
                     <th >तेल (सोया अॅगमार्क)</th>
                     <th >मीठ (आयोडिनयुक्त)</th>
@@ -269,16 +271,18 @@
                     <th class="fontMarathiNumber">एकुण वजन (किलो)</th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMungdaal()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMatki()) %></th>
+                    <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra2()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMung()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMasuldaal()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getHarbara()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getVatana()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra1()) %></th>
-                    <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra2()) %></th>
+<!--
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra3()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra4()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra5()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra6()) %></th>
+-->
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getChvli()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getTel()) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMith()) %></th>
@@ -291,16 +295,18 @@
                     <th class="fontMarathiNumber">एकुण वजन (क्विंटल)</th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMungdaal()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMatki()/1000) %></th>
+                    <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra2()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMung()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMasuldaal()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getHarbara()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getVatana()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra1()/1000) %></th>
-                    <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra2()/1000) %></th>
+<!--
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra3()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra4()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra5()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getExtra6()/1000) %></th>
+-->
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getChvli()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getTel()/1000) %></th>
                     <th class="fontMarathiNumber"><%=threeDecimalFormatter.format(allSum.getMith()/1000) %></th>

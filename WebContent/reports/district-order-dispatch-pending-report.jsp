@@ -177,18 +177,20 @@
                     <th>क्र.</th>
                     <th>तालूका</th>
                     <th> </th>
-        			<th >मुंगदाळ</th>
-        			<th >तुर डाळ</th>
-        			<th >मुंग</th>
-        			<th >मटकी</th>
-        			<th >हरभरा</th>
+                    <th >मुंगदाळ</th>
+                    <th >तुर डाळ</th>
+                    <th >Extra2</th>
+                    <th >मुंग</th>
+                    <th >मटकी</th>
+                    <th >हरभरा</th>
                     <th >वटाणा</th>
                     <th >सोया वडी</th>
-                    <th >Extra2</th>
+                    <!--
                     <th >Extra3</th>
                     <th >Extra4</th>
                     <th >Extra5</th>
                     <th >Extra6</th>
+                    -->
                     <th >चवळी</th>
                     <th >तेल (सोया अॅगमार्क)</th>
                     <th >मीठ (आयोडिनयुक्त)</th>
@@ -203,18 +205,20 @@
                     <td class="fontMarathiNumber" rowspan="3"><%=++srno%></td>
                     <td class="fontsize16 " rowspan="3"><%=d.getTalukaMarathi()%></td>
                     <td class="fontsize16 " >Taluka Order (KG) </td>
-					<th class="fontMarathiNumber"><%=d.getOmungdaal() %></th>
+                    <th class="fontMarathiNumber"><%=d.getOmungdaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmatki() %></th>
+                    <th class="fontMarathiNumber"><%=d.getOextra2() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmung() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmasuldaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getOharbara() %></th>
                     <th class="fontMarathiNumber"><%=d.getOvatana() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra1() %></th>
-                    <th class="fontMarathiNumber"><%=d.getOextra2() %></th>
+                    <!--
                     <th class="fontMarathiNumber"><%=d.getOextra3() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra4() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra5() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra6() %></th>
+                    -->
                     <th class="fontMarathiNumber"><%=d.getOchvli() %></th>
                     <th class="fontMarathiNumber"><%=d.getOtel() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmith() %></th>
@@ -225,18 +229,20 @@
                 </tr>
                 <tr>
                     <td class="fontsize16 " >Dispatched Order (KG)</td>   
-					<th class="fontMarathiNumber"><%=d.getMungdaal() %></th>
+                    <th class="fontMarathiNumber"><%=d.getMungdaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getMatki() %></th>
+                    <th class="fontMarathiNumber"><%=d.getExtra2() %></th>
                     <th class="fontMarathiNumber"><%=d.getMung() %></th>
                     <th class="fontMarathiNumber"><%=d.getMasuldaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getHarbara() %></th>
                     <th class="fontMarathiNumber"><%=d.getVatana() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra1() %></th>
-                    <th class="fontMarathiNumber"><%=d.getExtra2() %></th>
+                    <!--
                     <th class="fontMarathiNumber"><%=d.getExtra3() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra4() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra5() %></th>
                     <th class="fontMarathiNumber"><%=d.getExtra6() %></th>
+                    -->
                     <th class="fontMarathiNumber"><%=d.getChvli() %></th>
                     <th class="fontMarathiNumber"><%=d.getTel() %></th>
                     <th class="fontMarathiNumber"><%=d.getMith() %></th>
@@ -247,18 +253,20 @@
                 </tr>
                 <tr>                 
                     <td class="fontsize16 " >Pending Order (KG)</td>
-					<th class="fontMarathiNumber"><%=d.getOmungdaal()-d.getMungdaal() %></th>
+                    <th class="fontMarathiNumber"><%=d.getOmungdaal()-d.getMungdaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmatki()-d.getMatki() %></th>
+                    <th class="fontMarathiNumber"><%=d.getOextra2()-d.getExtra2() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmung()-d.getMung() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmasuldaal()-d.getMasuldaal() %></th>
                     <th class="fontMarathiNumber"><%=d.getOharbara()-d.getHarbara() %></th>
                     <th class="fontMarathiNumber"><%=d.getOvatana()-d.getVatana() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra1()-d.getExtra1() %></th>
-                    <th class="fontMarathiNumber"><%=d.getOextra2()-d.getExtra2() %></th>
+                    <!--
                     <th class="fontMarathiNumber"><%=d.getOextra3()-d.getExtra3() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra4()-d.getExtra4() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra5()-d.getExtra5() %></th>
                     <th class="fontMarathiNumber"><%=d.getOextra6()-d.getExtra6() %></th>
+                    -->
                     <th class="fontMarathiNumber"><%=d.getOchvli()-d.getChvli() %></th>
                     <th class="fontMarathiNumber"><%=d.getOtel()-d.getTel() %></th>
                     <th class="fontMarathiNumber"><%=d.getOmith()-d.getMith() %></th>
